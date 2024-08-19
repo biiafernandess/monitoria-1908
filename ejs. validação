@@ -1,0 +1,18 @@
+<h1>Bem-vindo</h1>
+<form action="/submit" method="POST" onsubmit="return validateForm()">
+  <input type="text" name="name" placeholder="Digite seu nome" required>
+  <button type="submit">Enviar</button>
+</form>
+<script src="/scripts.js"></script>
+
+<h1>Bem-vindo, <%= name %>!</h1>
+<a href="/">Voltar</a>
+
+function validateForm() {
+  const nameInput = document.querySelector('input[name="name"]');
+  if (nameInput.value.trim() === '') {
+    alert('Por favor, preencha o campo de nome.');
+    return false;
+  }
+  return true;
+}
